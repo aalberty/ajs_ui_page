@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>global.HTMLTemplateRetriever</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>HTMLTemplateRetriever</name>
+        <script><![CDATA[var HTMLTemplateRetriever = Class.create();
+HTMLTemplateRetriever.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    
+    "getTemplateContents": function () {
+        var templateName = this.getParameter("sysparm_appname") + "-template";
+        var templateRec = new GlideRecord("sp_ng_template");
+		templateRec.addEncodedQuery("id=" + templateName);
+		templateRec.query();
+		
+		if (templateRec.next()) {
+			return templateRec.getValue("template");
+		}
+    },
+
+    type: 'HTMLTemplateRetriever'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-16 22:01:30</sys_created_on>
+        <sys_id>ca26354647403110e83a2778c26d43bb</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>HTMLTemplateRetriever</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_update_name>sys_script_include_ca26354647403110e83a2778c26d43bb</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-16 23:01:47</sys_updated_on>
+    </sys_script_include>
+</record_update>
