@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>global.AngularJSPageGenerator</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Controller --&gt; UI Script --&gt; sp_js_include&#13;
+CSS --&gt; sp_css&#13;
+HTML --&gt; sp_ng_template --&gt; AJAX to retrieve</description>
+        <name>AngularJSPageGenerator</name>
+        <script><![CDATA[/** 
+ * Controller --> UI Script --> sp_js_include
+ * CSS --> sp_css
+ * HTML --> sp_ng_template --> AJAX to retrieve
+*/
+
+
+
+function AngularJSPageGenerator (appName) {
+    return stubPage(appName);
+}
+
+
+function stubPage (appName) {
+    var recIds = {};
+    recIds.concat(stubController(appName));
+    recIds.concat(stubHTMLTemplate(appName));
+    recIds.concat(stubCSS(appName));
+    recIds.concat(stubUIPage(appName));
+    return recIds;
+};
+
+
+function stubController (appName) {
+    var ctrl = new GlideRecord("sys_ui_script");
+    ctrl.initialize();
+    ctrl.name = appName + "Controller";
+    ctrl.ui_type = "0";
+    var ctrlContent = "";
+    ctrlContent += "var " + appName + "App = angular.module('" + appName + "', []);";
+    ctrlContent += appName + "App.controller('" + appName + "Ctrl', function ($scope) {});";
+    ctrl.script = ctrlContent;
+    var controllerId = ctrl.insert();
+    
+    if (controllerId) {
+        var ctrlJSInclude = GlideRecord("sp_js_include");
+        ctrlJSInclude.initialize();
+        ctrlJSInclude.displayName = appName + "Controller";
+        ctrlJSInclude.source = "local";
+        ctrlJSInclude.sys_ui_script = controllerId;
+        var ctrlIncludeId = ctrlJSInclude.insert();
+    }
+
+    return {"controllerId": controllerId, "jsincludeId": ctrlIncludeId};
+}
+
+function stubHTMLTemplate (appName) {
+    var template = new GlideRecord("sp_ng_template");
+    template.initialize();
+    template.id = appName + "-template";
+    template.template = "<div ng-controller='" + appName + "Ctrl'><h1>Hello, World!</h1></div>"
+    var templateId = template.insert();
+    return templateId;
+}
+
+function stubCSS (appName) {
+    var css = new GlideRecord("sp_css");
+    css.initialize();
+    css.name = appName + "-css";
+    var cssId = css.insert();
+    return cssId;
+}
+
+
+function stubUIPage (appName) {
+    var uip = new GlideRecord("sys_ui_page");
+    uip.initialize();
+    uip.name = appName;    
+    uip.html = loadHTMLTemplate(appName);
+    uip.client_script = loadClientScriptTemplate(appName);
+    var uipId = uip.insert();
+    return uipId;
+}
+
+function loadHTMLTemplate (appName) {
+    var htmlTemplate = new GlideRecord("sp_ng_template");
+    if (htmlTemplate.get("3d9ab18a47403110e83a2778c26d438d")) {
+        var templateContent = htmlTemplate.getValue("template"); 
+        templateContent = templateContent.replaceAll("::APP_NAME::", appName);
+        return templateContent;
+    }
+}
+
+function loadClientScriptTemplate (appName) {
+    var csTemplate = new GlideRecord("sys_ui_script");
+    if (csTemplate.get("98fe7d8e47403110e83a2778c26d4360")) {
+        var templateContent = csTemplate.getValue("script");
+        templateContent = templateContent.replaceAll("::APP_NAME::", appName);
+        return templateContent;
+    }
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-16 21:32:10</sys_created_on>
+        <sys_id>038ead8a47003110e83a2778c26d43d3</sys_id>
+        <sys_mod_count>48</sys_mod_count>
+        <sys_name>AngularJSPageGenerator</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_update_name>sys_script_include_038ead8a47003110e83a2778c26d43d3</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-16 23:09:58</sys_updated_on>
+    </sys_script_include>
+</record_update>

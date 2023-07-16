@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>uiPageClientScriptTemplate</name>
+        <script><![CDATA[function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Append random int to make sure file is reloaded each time, 
+// otherwise caching interferes.
+// TODO: remove after dev work
+ScriptLoader.getScripts(["::APP_NAME::Controller.jsdbx?" + getRandomInt(100000)], function () {
+	var ga = new GlideAjax("HTMLTemplateRetriever");
+	ga.addParam("sysparm_name", "getTemplateContents");
+	ga.addParam("sysparm_appname", "::APP_NAME::");
+	ga.getXMLAnswer(appendAngularAppToDoc);
+
+	function appendAngularAppToDoc (template) {
+		var container = angular.element("#::APP_NAME::-container");
+		var app = angular.element(template);
+		angular.bootstrap(app, ['::APP_NAME::']);
+		container.append(app);
+	}
+});]]></script>
+        <script_name/>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-16 22:39:34</sys_created_on>
+        <sys_id>98fe7d8e47403110e83a2778c26d4360</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>uiPageClientScriptTemplate</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_update_name>sys_ui_script_98fe7d8e47403110e83a2778c26d4360</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-16 22:50:04</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>
