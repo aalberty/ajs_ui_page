@@ -28,9 +28,9 @@ function stubPage (appName) {
     recIds.concat(stubHTMLTemplate(appName));
     recIds.concat(stubCSS(appName));
     recIds.concat(stubUIPage(appName));
+    recIds.concat(stubServerScript(appName));
     return recIds;
-};
-
+}
 
 function stubController (appName) {
     var ctrl = new GlideRecord("sys_ui_script");
@@ -53,6 +53,20 @@ function stubController (appName) {
     }
 
     return {"controllerId": controllerId, "jsincludeId": ctrlIncludeId};
+}
+
+function stubServerScript (appName) {
+    var srv = new GlideRecord("sys_script_include");
+    var scriptContents = "var test = Class.create();\n"
+    + "test.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {\n"
+    + "\ttype: 'test'\n"
+    + "});";
+    
+    srv.initialize();
+    srv.name = appName + "Ajax";
+    srv.client_callable = true;
+    srv.script = scriptContents;
+    var siId = srv.insert();   
 }
 
 function stubHTMLTemplate (appName) {
@@ -104,13 +118,13 @@ function loadClientScriptTemplate (appName) {
         <sys_created_by>talberty</sys_created_by>
         <sys_created_on>2023-07-16 21:32:10</sys_created_on>
         <sys_id>038ead8a47003110e83a2778c26d43d3</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>AngularJSPageGenerator</sys_name>
         <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
         <sys_policy/>
         <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
         <sys_update_name>sys_script_include_038ead8a47003110e83a2778c26d43d3</sys_update_name>
         <sys_updated_by>talberty</sys_updated_by>
-        <sys_updated_on>2023-07-16 23:09:58</sys_updated_on>
+        <sys_updated_on>2023-07-24 18:09:31</sys_updated_on>
     </sys_script_include>
 </record_update>
