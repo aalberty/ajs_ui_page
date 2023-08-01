@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="DELETE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>myAppController</name>
+        <script><![CDATA[var myAppApp = angular.module('myApp', []);
+myAppApp.controller('myAppCtrl', function($scope) {
+	$scope.btnClick = function () {
+		console.log("click");
+	}
+});]]></script>
+        <script_name/>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-16 23:12:04</sys_created_on>
+        <sys_id>f486cac647803110e83a2778c26d4306</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>myAppController</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_update_name>sys_ui_script_f486cac647803110e83a2778c26d4306</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-16 23:13:54</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sys_ui_script_f486cac647803110e83a2778c26d4306</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;
+    &lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;description/&gt;
+        &lt;global&gt;false&lt;/global&gt;
+        &lt;ignore_in_now_experience&gt;false&lt;/ignore_in_now_experience&gt;
+        &lt;name&gt;myAppController&lt;/name&gt;
+        &lt;script&gt;&lt;![CDATA[var myAppApp = angular.module('myApp', []);
+myAppApp.controller('myAppCtrl', function($scope) {
+	$scope.btnClick = function () {
+		console.log("click");
+	}
+});]]&gt;&lt;/script&gt;
+        &lt;script_name/&gt;
+        &lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;talberty&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2023-07-16 23:12:04&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;f486cac647803110e83a2778c26d4306&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;myAppController&lt;/sys_name&gt;
+        &lt;sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e"&gt;d6cd69c647003110e83a2778c26d431e&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="AngularJS UI Page Generator"&gt;d6cd69c647003110e83a2778c26d431e&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_ui_script_f486cac647803110e83a2778c26d4306&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;talberty&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2023-07-16 23:13:54&lt;/sys_updated_on&gt;
+        &lt;ui_type&gt;0&lt;/ui_type&gt;
+        &lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;
+    &lt;/sys_ui_script&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>605059200</payload_hash>
+        <record_name>myAppController</record_name>
+        <reverted_from/>
+        <source>48647a0747103110e83a2778c26d43e6</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-08-01 15:22:06</sys_created_on>
+        <sys_id>a464ba0747103110e83a2778c26d4326</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>189b1b12e9f0000001</sys_recorded_at>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-08-01 15:22:06</sys_updated_on>
+        <type>UI Script</type>
+        <update_guid>e064ba0718103110746b265c6306fb26</update_guid>
+        <update_guid_history>e064ba0718103110746b265c6306fb26:0,2f44f20735103110f8c8317eccfb8b38:-1747585626,bd347607261031101cccd78b4a77ef02:0,43e3fac33f103110c46669c6cffb624d:-1747585626,e3e68ec65c80311034f2f99488e34e4a:-838279886,b086cac61d80311093ae254a09a70508:169360139</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-08-01 15:24:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_script">sys_ui_script</sys_db_object>
+        <sys_id>1ce14ce659084083a80a09fa9939e3b9</sys_id>
+        <sys_metadata>f486cac647803110e83a2778c26d4306</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>myAppController</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_scope_delete display_value="">1fb1cb36c6054d8aa4b9d6d315095901</sys_scope_delete>
+        <sys_update_name>sys_ui_script_f486cac647803110e83a2778c26d4306</sys_update_name>
+        <sys_update_version display_value="sys_ui_script_f486cac647803110e83a2778c26d4306">a464ba0747103110e83a2778c26d4326</sys_update_version>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-08-01 15:24:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
