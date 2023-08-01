@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include">
+    <sp_css_include action="DELETE">
+        <name>myApp-css</name>
+        <source>local</source>
+        <sp_css display_value="myApp-css">f8864ec647803110e83a2778c26d4318</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-16 23:12:04</sys_created_on>
+        <sys_id>78864ec647803110e83a2778c26d4319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>myApp-css</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_update_name>sp_css_include_78864ec647803110e83a2778c26d4319</sys_update_name>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-16 23:12:04</sys_updated_on>
+        <url/>
+    </sp_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</application>
+        <file_path/>
+        <instance_id>ea9e6024dbd51d9442b321c4059619ae</instance_id>
+        <instance_name>dev131274</instance_name>
+        <name>sp_css_include_78864ec647803110e83a2778c26d4319</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include"><sp_css_include action="INSERT_OR_UPDATE"><name>myApp-css</name><source>local</source><sp_css display_value="myApp-css">f8864ec647803110e83a2778c26d4318</sp_css><sys_class_name>sp_css_include</sys_class_name><sys_created_by>talberty</sys_created_by><sys_created_on>2023-07-16 23:12:04</sys_created_on><sys_id>78864ec647803110e83a2778c26d4319</sys_id><sys_mod_count>0</sys_mod_count><sys_name>myApp-css</sys_name><sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package><sys_policy/><sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope><sys_update_name>sp_css_include_78864ec647803110e83a2778c26d4319</sys_update_name><sys_updated_by>talberty</sys_updated_by><sys_updated_on>2023-07-16 23:12:04</sys_updated_on><url/></sp_css_include></record_update>]]></payload>
+        <payload_hash>1204508572</payload_hash>
+        <record_name>myApp-css</record_name>
+        <reverted_from/>
+        <source>5a84d93047532110e83a2778c26d43aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-07-16 23:12:04</sys_created_on>
+        <sys_id>0d864ec647803110e83a2778c26d431b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18960f9b5720000001</sys_recorded_at>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-07-16 23:12:04</sys_updated_on>
+        <type>CSS Include</type>
+        <update_guid>81864ec6248031107bcffd420b42be1b</update_guid>
+        <update_guid_history>81864ec6248031107bcffd420b42be1b:1204508572</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="myApp-css">6de3728347103110e83a2778c26d43b5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>talberty</sys_created_by>
+        <sys_created_on>2023-08-01 15:19:58</sys_created_on>
+        <sys_db_object display_value="" name="sp_css_include">sp_css_include</sys_db_object>
+        <sys_id>052467d38c604b709dd58508a095a290</sys_id>
+        <sys_metadata>78864ec647803110e83a2778c26d4319</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>myApp-css</sys_name>
+        <sys_package display_value="AngularJS UI Page Generator" source="d6cd69c647003110e83a2778c26d431e">d6cd69c647003110e83a2778c26d431e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AngularJS UI Page Generator">d6cd69c647003110e83a2778c26d431e</sys_scope>
+        <sys_scope_delete display_value="">1fb1cb36c6054d8aa4b9d6d315095901</sys_scope_delete>
+        <sys_update_name>sp_css_include_78864ec647803110e83a2778c26d4319</sys_update_name>
+        <sys_update_version display_value="sp_css_include_78864ec647803110e83a2778c26d4319">0d864ec647803110e83a2778c26d431b</sys_update_version>
+        <sys_updated_by>talberty</sys_updated_by>
+        <sys_updated_on>2023-08-01 15:19:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
